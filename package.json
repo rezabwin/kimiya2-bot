@@ -1,0 +1,17 @@
+{
+  "name": "kimiya2-bot",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:init": "wrangler d1 execute kimiya2-db --file=sql/schema.sql --remote",
+    "db:seed": "wrangler d1 execute kimiya2-db --file=sql/seed.sql --remote",
+    "db:init:local": "wrangler d1 execute kimiya2-db --file=sql/schema.sql --local",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}
