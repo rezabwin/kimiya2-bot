@@ -1,0 +1,27 @@
+name = "kimiya2-bot"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+BOT_USERNAME = "kimyaee2bot"
+ADMIN_CHAT_ID = "1407249972"
+VICE_PRINCIPAL_ID = "1407249972"
+SCHOOL_NAME = "دبیرستان شهید کیمیایی ۲"
+
+[[queues.producers]]
+binding = "BROADCAST_QUEUE"
+queue = "kimiya2-broadcast"
+
+[[queues.consumers]]
+queue = "kimiya2-broadcast"
+max_batch_size = 10
+max_batch_timeout = 5
+max_retries = 3
+
+[triggers]
+crons = [
+  "*/5 * * * *",
+  "30 5 * * *",
+  "0 3 * * *"
+]
